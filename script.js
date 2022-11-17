@@ -17,15 +17,19 @@ function reducer(prevState = [], action) {
         {
           title: action.title,
           isDone: false,
-          id: action.id,
+          id: Date.now(),
         },
       ];
     case "removeTodo":
       let newState = [...prevState];
-      newState.splice(action.id, 1);
+      newState.splice(
+        prevState.findIndex((todo) => todo.id == action.id),
+        1
+      );
       return newState;
+
     case "toggleIsDone":
-      let todo = prevState.at(action.id);
+      let todo = prevState.find((todo) => todo.id == action.id);
       todo.isDone = !todo.isDone;
       return prevState;
     default:
@@ -60,16 +64,17 @@ store.subscribe(() => {
 
 function createUI(data) {
   root.innerHTML = "";
-  data.forEach((todo, index) => {
+  data.forEach((todo) => {
     let li = document.createElement("li");
     let p = document.createElement("p");
     let i = document.createElement("i");
     i.classList.add("fas");
     i.classList.add("fa-xmark");
-    i.addEventListener("click", () => {
+    i.setAttribute("data-id", todo.id);
+    i.addEventListener("click", (event) => {
       store.dispatch({
         type: "removeTodo",
-        id: index,
+        id: event.target.dataset.id,
       });
     });
     if (todo.isDone) {
@@ -78,10 +83,11 @@ function createUI(data) {
 
     let input = document.createElement("input");
     input.type = "checkbox";
-    input.addEventListener("click", () => {
+    input.setAttribute("data-id", todo.id);
+    input.addEventListener("click", (event) => {
       store.dispatch({
         type: "toggleIsDone",
-        id: index,
+        id: event.target.dataset.id,
       });
     });
 
