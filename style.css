@@ -1,0 +1,230 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+}
+body {
+  line-height: 1.5;
+  font-family: Noto Sans, sans-serif;
+}
+a {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-col {
+  flex-direction: column;
+}
+.container {
+  width: 100%;
+  max-width: 80%;
+  margin: 0 auto;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+body {
+  margin: 0 auto;
+  text-align: center;
+  background-color: rgb(252, 240, 255);
+}
+h1 {
+  margin: 5rem 0;
+  font-size: 2rem;
+  font-weight: 600;
+}
+h2 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+.wrapper {
+  width: 30%;
+  margin: 0 auto;
+}
+#add-todo {
+  padding: 0.8rem 1rem;
+  width: 100%;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+#add-todo::placeholder {
+  color: lightgray;
+  font-size: 1.2rem;
+}
+li {
+  padding: 0.8rem 1rem;
+  background-color: antiquewhite;
+  /* border-bottom: 1px solid lightgray; */
+  margin-bottom: 0.2rem;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+li input {
+  margin: 0 0.8rem;
+}
+ul {
+  margin-top: 1rem;
+}
+
+p {
+  flex: 0 1 90%;
+}
+.fas {
+  color: red;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+#search-todo {
+  padding: 0.5rem 1rem;
+  width: 100%;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+#search-todo::placeholder {
+  color: lightgray;
+  font-size: 1rem;
+}
+.completed {
+  text-decoration: line-through;
+  color: grey;
+}
